@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 
+
 app = Flask(__name__)
 
 RSS_FEED = "http://www.cityofmadison.com/police/newsroom/incidentreports/rss.cfm?a=71"

@@ -7,8 +7,8 @@
 	<h1>Madison Police Incident Reports</h1>
 	{% for article in articles %}
 		<b><a href="{{article.link}}">{{ article.title }}</a></b><br>
-		<i>{{ article.published }}</i>
-		<p>{{ article.summary }}</p>
+		<i>{{ article.published }}</i><br>
+		<p>{{ article.summary|safe|replace("&nbsp;","")|replace("& #8230;", "...") }}</p>
 		<hr>
 	{% endfor %}
 </body>
