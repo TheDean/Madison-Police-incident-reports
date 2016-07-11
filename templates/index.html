@@ -2,13 +2,16 @@
 <html>
 <head>
 	<title>Madison Police Incident Reports</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+
+
 </head>
 <body>
 	<h1>Madison Police Incident Reports</h1>
 	{% for article in articles %}
 		<b><a href="{{article.link}}">{{ article.title }}</a></b><br>
 		<i>{{ article.published }}</i><br>
-		<p>{{ article.summary|safe|replace("&nbsp;","")|replace("& #8230;", "...") }}</p>
+		<p>{{ article.summary|safe|replace("&nbsp;","")|replace(" & #8230;", "...") }}</p>
 		<hr>
 	{% endfor %}
 </body>
